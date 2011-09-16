@@ -1,0 +1,116 @@
+package com.fantasy.football.auctionpro.reader;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fantasy.football.auctionpro.Constants;
+import com.fantasy.football.auctionpro.entity.Player;
+import com.fantasy.football.auctionpro.entity.PlayerData;
+import com.fantasy.football.auctionpro.ui.PlayerUtil;
+
+/**
+ * Receiver File Reader
+ * 
+ * @author Derek
+ *
+ */
+public class QuarterBackFileReader extends AbstractFileReader {
+	
+	/** Rank */
+	private static final int RANK = 0;
+	
+	/** Name */
+	private static final int NAME = 1;
+	
+	/** Team */
+	private static final int TEAM = 2;
+	
+	/** Passing Yards */
+	private static final int PASSYDS = 8;
+
+	/** Passing TD */
+	private static final int PASSTD = 9;
+	
+	/** Passing INT */
+	private static final int PASSINT = 10;
+	
+	/** Rushing TD */
+	private static final int RUSHTD = 18;
+
+	/** Rushing Yards */
+	private static final int RUSHYDS = 19;
+	
+	/** Players */
+	private List<Player> players = new ArrayList<Player>();
+	
+	/**
+	 * Constructor
+	 * 
+	 * @param path
+	 */
+	public QuarterBackFileReader(String path) throws FileNotFoundException {
+		super(path);
+	}
+	
+	@Override
+	public void processLine(String data, int row) throws Exception {
+		if(row <= 1) {
+			return;
+		}
+		
+		String[] values = data.split(getDelimiter());
+		
+		Player p = new Player(values[NAME].toUpperCase(),Constants.QB,values[TEAM]);
+		p.setRank(new Integer(values[RANK]));
+		
+		PlayerData pd = new PlayerData();
+		pd.setPassingYards(new Integer(values[PASSYDS]));
+		pd.setPassingTd(new Integer(values[PASSTD]));
+		pd.setPassingInt(new Integer(values[PASSINT]));
+		pd.setRushingTd(new Integer(values[RUSHTD]));
+		pd.setRushingYards(new Integer(values[RUSHYDS]));
+		
+		// Set player data
+		p.setPlayerData(pd);
+		
+		// Set fantasy points
+		pd.setFantasyPoints(PlayerUtil.getFantasyPoints(p, scoreSystem));
+		
+		players.add(p);
+	}
+
+	/**
+	 * Get Players
+	 * 
+	 * @return List
+	 */
+	public List<Player> getPlayers() {
+		return players;
+	}
+
+	/**
+	 * Set Players
+	 * 
+	 * @param players
+	 */
+	public void setPlayers(List<Player> players) {
+		this.players = players;
+	}
+
+	/**
+	 * Main
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try {
+			QuarterBackFileReader rfr = new QuarterBackFileReader("/data/2010/quarterbacks.csv");
+			rfr.processFile();
+			
+			System.out.println(rfr.getPlayers());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
