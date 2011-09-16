@@ -5,12 +5,12 @@
                   http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 	<persistence-unit name="persistenceUnit">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>com.djhelbert.fantasy.football.entity.Team</class>
-		<class>com.djhelbert.fantasy.football.entity.Player</class>
-		<class>com.djhelbert.fantasy.football.entity.PlayerData</class>
-		<class>com.djhelbert.fantasy.football.entity.DefenseWeek</class>
-		<class>com.djhelbert.fantasy.football.entity.Configuration</class>
-		<class>com.djhelbert.fantasy.football.entity.ScoreSystem</class>
+		<class>com.fantasy.football.auctionpro.entity.Team</class>
+		<class>com.fantasy.football.auctionpro.entity.Player</class>
+		<class>com.fantasy.football.auctionpro.entity.PlayerData</class>
+		<class>com.fantasy.football.auctionpro.entity.DefenseWeek</class>
+		<class>com.fantasy.football.auctionpro.entity.Configuration</class>
+		<class>com.fantasy.football.auctionpro.entity.ScoreSystem</class>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class" />
 			<property name="hibernate.format_sql" value="false" />
