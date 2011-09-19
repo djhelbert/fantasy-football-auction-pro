@@ -49,6 +49,21 @@ public class Util {
 		int x = screenSize.width - size.width;
 		comp.setLocation(x, y);
 	}
+
+	/**
+	 * Get Help URL
+	 * 
+	 * @param name
+	 * @return
+	 */
+	public static URL getHelpURL(String name) {
+		String helpResPath = "help/" + name;
+
+		ClassLoader cload = Util.class.getClassLoader();
+		URL helpURL = cload.getResource(helpResPath);
+
+		return helpURL;
+	}
 	
 	/**
 	 * Get Image Icon
