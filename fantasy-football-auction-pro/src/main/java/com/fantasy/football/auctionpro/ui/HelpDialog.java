@@ -4,6 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.JDialog;
@@ -46,15 +49,26 @@ public class HelpDialog extends JDialog implements TreeSelectionListener, Hyperl
 	 * Constructor
 	 * 
 	 * @param entries
+	 * @param defaultKey
 	 */
-	public HelpDialog(Map<String,URL> entries) {
+	public HelpDialog(Map<String,URL> entries, String defaultKey) {
 		super(MainApp.getMainFrame(),"Help",true);
 		
 		this.entries = entries;
 		
 		init();
 		
-		setSize(700, 500);
+		setSize(800, 600);
+		
+		if( defaultKey != null ) {
+			if( entries.get(defaultKey) != null ) {
+				try {
+					pane.setPage(entries.get(defaultKey));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 		
 		Util.centerComponent(this);
 	}
@@ -73,7 +87,11 @@ public class HelpDialog extends JDialog implements TreeSelectionListener, Hyperl
 		
 		DefaultMutableTreeNode child;
 	    
-	    for(String key : entries.keySet()) {
+		List<String> list = new ArrayList<String>(entries.keySet());
+		
+		Collections.sort(list);
+		
+	    for(String key : list) {
 	    	child = new DefaultMutableTreeNode(key);
 	    	root.add(child);
 	    }
