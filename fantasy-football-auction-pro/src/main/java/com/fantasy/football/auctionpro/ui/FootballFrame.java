@@ -7,7 +7,10 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,8 +27,8 @@ import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 import javax.swing.border.EtchedBorder;
 
-import com.fantasy.football.auctionpro.MainApp;
 import com.fantasy.football.auctionpro.DaoFactory;
+import com.fantasy.football.auctionpro.MainApp;
 import com.fantasy.football.auctionpro.ServiceFactory;
 import com.fantasy.football.auctionpro.dao.PlayerDao;
 import com.fantasy.football.auctionpro.entity.Player;
@@ -59,6 +62,9 @@ public class FootballFrame extends JFrame implements ActionListener {
 
 	/** License Item */
 	private static JMenuItem licenseItem = new JMenuItem("License");
+
+	/** Help Item */
+	private static JMenuItem helpItem = new JMenuItem("Help");
 	
     /** Tool Bar */
     private static JToolBar toolBar = new JToolBar();
@@ -133,12 +139,14 @@ public class FootballFrame extends JFrame implements ActionListener {
 		menu.add(exitItem);
 		menuBar.add(menu);
 		
+		helpItem.addActionListener(this);
 		aboutItem.addActionListener(this);
 		licenseItem.addActionListener(this);
 		addPlayerItem.addActionListener(this);
 		
 		addPlayerItem.setIcon(Util.getImageIcon("add.png"));
 		aboutItem.setIcon(Util.getImageIcon("about.png"));
+		helpItem.setIcon(Util.getImageIcon("help.png"));
 		licenseItem.setIcon(Util.getImageIcon("business.png"));
 
 		JMenu playerMenu = new JMenu("Player");
@@ -146,6 +154,7 @@ public class FootballFrame extends JFrame implements ActionListener {
 		menuBar.add(playerMenu);
 		
 		JMenu helpMenu = new JMenu("Help");
+		helpMenu.add(helpItem);
 		helpMenu.add(licenseItem);
 		helpMenu.addSeparator();
 		helpMenu.add(aboutItem);
@@ -194,6 +203,9 @@ public class FootballFrame extends JFrame implements ActionListener {
 			// Exit
 			System.exit(0);
 		}
+		else if( e.getSource() == helpItem ) {
+			helpAction();
+		}
 		else if( e.getSource() == aboutItem ) {
 			aboutAction();
 		}
@@ -221,6 +233,29 @@ public class FootballFrame extends JFrame implements ActionListener {
 		else if( e.getSource() == searchButton || e.getSource() == searchField ) {
 			searchAction();
 		}
+	}
+
+	/**
+	 * Help Action
+	 */
+	private void helpAction() {
+		Map<String,URL> entries = new HashMap<String,URL>();
+		
+		entries.put("Introduction", Util.getHelpURL("intro.html"));
+		entries.put("Update League", Util.getHelpURL("update_league.html"));
+		entries.put("Update Roster Size", Util.getHelpURL("update_roster_size.html"));
+		entries.put("Update Scoring System", Util.getHelpURL("update_scoring_system.html"));
+		entries.put("Add Team", Util.getHelpURL("add_team.html"));
+		entries.put("Add Team Player", Util.getHelpURL("add_team_player.html"));
+		entries.put("Remove Team Player", Util.getHelpURL("rem_team_player.html"));
+		entries.put("Player Search", Util.getHelpURL("search_player.html"));
+		entries.put("Print Team", Util.getHelpURL("print_team.html"));
+		entries.put("Update Player Price", Util.getHelpURL("update_price.html"));
+		entries.put("Add Missing Player", Util.getHelpURL("add_missing_player.html"));
+		entries.put("New League", Util.getHelpURL("new_league.html"));
+		
+		HelpDialog hd = new HelpDialog(entries,"Introduction");
+		hd.setVisible(true);
 	}
 	
 	/**
