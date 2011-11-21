@@ -17,7 +17,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries( {
-	@NamedQuery(name = "DefenseWeek.findByTeam", query = "SELECT dw FROM DefenseWeek dw where nflTeam = :nflTeam order by dw.week"),
+	@NamedQuery(name = "DefenseWeek.findByTeam", query = "SELECT dw FROM DefenseWeek dw where nflTeam = :nflTeam order by dw.week")
 } )
 public class DefenseWeek implements Serializable {
 
