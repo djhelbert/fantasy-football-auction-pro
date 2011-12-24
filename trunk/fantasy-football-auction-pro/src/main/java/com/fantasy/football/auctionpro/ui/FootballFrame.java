@@ -241,18 +241,18 @@ public class FootballFrame extends JFrame implements ActionListener {
 	private void helpAction() {
 		Map<String,URL> entries = new HashMap<String,URL>();
 		
+		entries.put("Add Missing Player", Util.getHelpURL("add_missing_player.html"));
+		entries.put("Add Player to Team", Util.getHelpURL("add_player_team.html"));
+		entries.put("Add Team", Util.getHelpURL("add_new_team.html"));
 		entries.put("Introduction", Util.getHelpURL("intro.html"));
-		entries.put("Update League", Util.getHelpURL("update_league.html"));
-		entries.put("Update Roster Size", Util.getHelpURL("update_roster_size.html"));
-		entries.put("Update Scoring System", Util.getHelpURL("update_scoring_system.html"));
-		entries.put("Add Team", Util.getHelpURL("add_team.html"));
-		entries.put("Add Team Player", Util.getHelpURL("add_team_player.html"));
-		entries.put("Remove Team Player", Util.getHelpURL("rem_team_player.html"));
+		entries.put("New League", Util.getHelpURL("new_league.html"));
+		entries.put("Remove Team", Util.getHelpURL("rem_team.html"));
+		entries.put("Remove Player from Team", Util.getHelpURL("rem_team_player.html"));
 		entries.put("Player Search", Util.getHelpURL("search_player.html"));
 		entries.put("Print Team", Util.getHelpURL("print_team.html"));
+		entries.put("Update League", Util.getHelpURL("update_league.html"));
 		entries.put("Update Player Price", Util.getHelpURL("update_price.html"));
-		entries.put("Add Missing Player", Util.getHelpURL("add_missing_player.html"));
-		entries.put("New League", Util.getHelpURL("new_league.html"));
+		entries.put("Update Scoring System", Util.getHelpURL("update_scoring_system.html"));
 		
 		HelpDialog hd = new HelpDialog(entries,"Introduction");
 		hd.setVisible(true);
