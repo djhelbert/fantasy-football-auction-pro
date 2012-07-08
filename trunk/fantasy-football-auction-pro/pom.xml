@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fantasy-football-auction-pro</groupId>
 	<artifactId>fantasy-football-auction-pro</artifactId>
-	<version>2011</version>
+	<version>2012</version>
 	<name>Fantasy Football Auction Pro</name>
 	<description>Fantasy Football Auction Pro is a completely free Java based desktop application designed for in-person auction drafts.</description>
 	
