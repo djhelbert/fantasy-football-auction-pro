@@ -28,32 +28,32 @@ public class FileServiceImpl implements FileService {
 	public List<Player> getAllPlayers() throws Exception {
 		List<Player> list = new ArrayList<Player>();
 		
-		DefenseFileReader  dfr = new DefenseFileReader("/data/2010/defense.csv");
+		DefenseFileReader  dfr = new DefenseFileReader("/data/2011/defense.csv");
 		dfr.processFile();
 		
 		list.addAll(dfr.getPlayers());
 		
-		KickerFileReader kfr = new KickerFileReader("/data/2010/kickers.csv");
+		KickerFileReader kfr = new KickerFileReader("/data/2011/kickers.csv");
 		kfr.processFile();
 		
 		list.addAll(kfr.getPlayers());
 		
-		ReceiverFileReader rfr = new ReceiverFileReader("/data/2010/receivers.csv",Constants.WR);
+		ReceiverFileReader rfr = new ReceiverFileReader("/data/2011/receivers.csv",Constants.WR);
 		rfr.processFile();
 		
 		list.addAll(rfr.getPlayers());
 		
-		ReceiverFileReader tfr = new ReceiverFileReader("/data/2010/tightends.csv",Constants.TE);
+		ReceiverFileReader tfr = new ReceiverFileReader("/data/2011/tightends.csv",Constants.TE);
 		tfr.processFile();
 		
 		list.addAll(tfr.getPlayers());
 		
-		RunningBackFileReader rbfr = new RunningBackFileReader("/data/2010/runningbacks.csv");
+		RunningBackFileReader rbfr = new RunningBackFileReader("/data/2011/runningbacks.csv");
 		rbfr.processFile();
 		
 		list.addAll(rbfr.getPlayers());
 
-		QuarterBackFileReader qbfr = new QuarterBackFileReader("/data/2010/quarterbacks.csv");
+		QuarterBackFileReader qbfr = new QuarterBackFileReader("/data/2011/quarterbacks.csv");
 		qbfr.processFile();
 		
 		list.addAll(qbfr.getPlayers());
