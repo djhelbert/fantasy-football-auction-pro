@@ -20,11 +20,14 @@ public class ReceiverFileReader extends AbstractFileReader {
 	/** Rank */
 	private static final int RANK = 0;
 	
-	/** Name */
-	private static final int NAME = 1;
+	/** First Name */
+	private static final int FIRSTNAME = 1;
+
+	/** Last Name */
+	private static final int LASTNAME = 2;
 	
 	/** Team */
-	private static final int TEAM = 2;
+	private static final int TEAM = 3;
 	
 	/** Position */
 	private String position = null;
@@ -52,15 +55,17 @@ public class ReceiverFileReader extends AbstractFileReader {
 		
 		String[] values = data.split(getDelimiter());
 		
-		Player p = new Player(values[NAME].toUpperCase(),position,values[TEAM]);
+		String name = values[FIRSTNAME] + " " + values[LASTNAME];
+		
+		Player p = new Player(name.toUpperCase(),position,values[TEAM]);
 		p.setRank(new Integer(values[RANK]));
 		
 		PlayerData pd = new PlayerData();
 		pd.setReception(new Integer(values[5]));
 		pd.setReceivingYards(new Integer(values[6]));
-		pd.setReceptionTd(new Integer(values[8]));
-		pd.setFumbleLost(new Integer(values[12]));
-		pd.setRushingTd(new Integer(values[13]));
+		pd.setReceptionTd(new Integer(values[12]));
+		pd.setFumbleLost(new Integer(values[19]));
+		pd.setRushingTd(new Integer(values[17]));
 		
 		// Set player data
 		p.setPlayerData(pd);
@@ -114,12 +119,12 @@ public class ReceiverFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			ReceiverFileReader rfr = new ReceiverFileReader("/data/2010/receivers.csv",Constants.WR);
+			ReceiverFileReader rfr = new ReceiverFileReader("/data/2011/receivers.csv",Constants.WR);
 			rfr.processFile();
 			
 			System.out.println(rfr.getPlayers());
 			
-			ReceiverFileReader tefr = new ReceiverFileReader("/data/2010/tightends.csv",Constants.TE);
+			ReceiverFileReader tefr = new ReceiverFileReader("/data/2011/tightends.csv",Constants.TE);
 			tefr.processFile();
 			
 			System.out.println(tefr.getPlayers());
