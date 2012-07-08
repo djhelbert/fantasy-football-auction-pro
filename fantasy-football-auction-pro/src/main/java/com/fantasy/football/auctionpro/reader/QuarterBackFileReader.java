@@ -20,26 +20,29 @@ public class QuarterBackFileReader extends AbstractFileReader {
 	/** Rank */
 	private static final int RANK = 0;
 	
-	/** Name */
-	private static final int NAME = 1;
+	/** First Name */
+	private static final int FIRSTNAME = 1;
+
+	/** Last Name */
+	private static final int LASTNAME = 2;
 	
 	/** Team */
-	private static final int TEAM = 2;
+	private static final int TEAM = 3;
 	
 	/** Passing Yards */
-	private static final int PASSYDS = 8;
+	private static final int PASSYDS = 9;
 
 	/** Passing TD */
-	private static final int PASSTD = 9;
+	private static final int PASSTD = 12;
 	
 	/** Passing INT */
-	private static final int PASSINT = 10;
+	private static final int PASSINT = 13;
 	
+	/** Rushing Yards */
+	private static final int RUSHYDS = 15;
+
 	/** Rushing TD */
 	private static final int RUSHTD = 18;
-
-	/** Rushing Yards */
-	private static final int RUSHYDS = 19;
 	
 	/** Players */
 	private List<Player> players = new ArrayList<Player>();
@@ -61,7 +64,9 @@ public class QuarterBackFileReader extends AbstractFileReader {
 		
 		String[] values = data.split(getDelimiter());
 		
-		Player p = new Player(values[NAME].toUpperCase(),Constants.QB,values[TEAM]);
+		String name = values[FIRSTNAME] + " " + values[LASTNAME];
+		
+		Player p = new Player(name.toUpperCase(),Constants.QB,values[TEAM]);
 		p.setRank(new Integer(values[RANK]));
 		
 		PlayerData pd = new PlayerData();
@@ -105,7 +110,7 @@ public class QuarterBackFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			QuarterBackFileReader rfr = new QuarterBackFileReader("/data/2010/quarterbacks.csv");
+			QuarterBackFileReader rfr = new QuarterBackFileReader("/data/2011/quarterbacks.csv");
 			rfr.processFile();
 			
 			System.out.println(rfr.getPlayers());
