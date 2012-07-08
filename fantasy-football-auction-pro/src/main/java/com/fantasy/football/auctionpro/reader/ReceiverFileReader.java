@@ -64,8 +64,9 @@ public class ReceiverFileReader extends AbstractFileReader {
 		pd.setReception(new Integer(values[5]));
 		pd.setReceivingYards(new Integer(values[6]));
 		pd.setReceptionTd(new Integer(values[12]));
-		pd.setFumbleLost(new Integer(values[19]));
 		pd.setRushingTd(new Integer(values[17]));
+		pd.setFumbleLost(new Integer(values[19]));
+		pd.setReturnTd(new Integer(values[20]));
 		
 		// Set player data
 		p.setPlayerData(pd);
