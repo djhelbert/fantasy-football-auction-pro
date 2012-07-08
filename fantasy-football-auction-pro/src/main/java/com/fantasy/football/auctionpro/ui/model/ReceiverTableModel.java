@@ -74,10 +74,10 @@ public class ReceiverTableModel extends PlayerTableModel {
 		else if(col == 7) {
 			return p.getPlayerData().getReceptionTd();
 		}
-		else if(col == 7) {
+		else if(col == 8) {
 			return p.getPlayerData().getRushingTd();
 		}
-		else if(col == 8) {
+		else if(col == 9) {
 			return p.getPlayerData().getReturnTd();
 		}
 		else {
