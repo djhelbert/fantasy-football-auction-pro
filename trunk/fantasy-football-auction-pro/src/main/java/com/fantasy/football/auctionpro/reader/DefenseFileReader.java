@@ -24,31 +24,28 @@ public class DefenseFileReader extends AbstractFileReader {
 	public static int TEAM = 1;
 	
 	/** PTS */
-	public static int POINTS = 3;
+	public static int POINTS = 18;
 	
 	/** DEF INT */
-	public static int DEF_INT = 12;
+	public static int DEF_INT = 8;
 	
 	/** Fumbles */
-	public static int FR = 21;
+	public static int FR = 17;
 	
 	/** Name */
-	public static int NAME = 23;
+	public static int NAME = 2;
 	
 	/** Sack */
-	public static int SACK = 24;
+	public static int SACK = 14;
 	
 	/** Safety */
-	public static int SAFETY = 25;
+	public static int SAFETY = 15;
 	
 	/** Blocked */
-	public static int BLOCKED_KICK = 26;
+	public static int BLOCKED_KICK = 16;
 
 	/** DEF TD */
-	public static int DEF_TD = 27;
-	
-	/** Fantasy Points */
-	public static int FP = 28;
+	public static int DEF_TD = 11;
 		
 	/** Defenses */
 	private List<Player> players = new ArrayList<Player>();
@@ -108,7 +105,7 @@ public class DefenseFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			DefenseFileReader dfr = new DefenseFileReader("/data/2010/defense.csv");
+			DefenseFileReader dfr = new DefenseFileReader("/data/2011/defense.csv");
 			dfr.processFile();
 			System.out.println(dfr.getPlayers());
 		} catch (Exception e) {
