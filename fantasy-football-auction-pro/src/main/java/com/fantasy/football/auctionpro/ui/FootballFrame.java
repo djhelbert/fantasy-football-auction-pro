@@ -303,7 +303,7 @@ public class FootballFrame extends JFrame implements ActionListener {
 	 * 
 	 */
 	private void aboutAction() {
-		Util.showInfo(MainApp.getMainComponent(), "Fantasy Football Auction Pro Copyright © 2011", "About");
+		Util.showInfo(MainApp.getMainComponent(), "Fantasy Football Auction Pro Copyright © 2012", "About");
 	}
 	
 	/**
