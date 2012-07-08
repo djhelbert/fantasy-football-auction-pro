@@ -20,29 +20,32 @@ public class RunningBackFileReader extends AbstractFileReader {
 	/** Rank */
 	public static final int RANK = 0;
 	
-	/** Name */
-	public static final int NAME = 1;
+	/** First Name */
+	private static final int FIRSTNAME = 1;
+
+	/** Last Name */
+	private static final int LASTNAME = 2;
 	
 	/** Team */
-	public static final int TEAM = 2;
+	public static final int TEAM = 3;
 	
 	/** Rush Yards */
 	public static final int RUSHYD = 6;
 	
 	/** Rush TD */
-	public static final int RUSHTD = 7;
+	public static final int RUSHTD = 9;
 	
 	/** Receptions */
-	public static final int REC = 12;
+	public static final int REC = 10;
 	
 	/** REC YDS */
-	public static final int RECYDS = 13;
+	public static final int RECYDS = 11;
 	
 	/** REC TD */
-	public static final int RECTD = 15;
+	public static final int RECTD = 17;
 	
 	/** Fumbles */
-	public static final int FL = 21;
+	public static final int FL = 19;
 	
 	/** Players */
 	private List<Player> players = new ArrayList<Player>();
@@ -64,7 +67,9 @@ public class RunningBackFileReader extends AbstractFileReader {
 		
 		String[] values = data.split(getDelimiter());
 		
-		Player p = new Player(values[NAME].toUpperCase(),Constants.RB,values[TEAM]);
+		String name = values[FIRSTNAME] + " " + values[LASTNAME];
+		
+		Player p = new Player(name.toUpperCase(),Constants.RB,values[TEAM]);
 		p.setRank(new Integer(values[RANK]));
 		
 		PlayerData pd = new PlayerData();
@@ -101,7 +106,7 @@ public class RunningBackFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			RunningBackFileReader rfr = new RunningBackFileReader("/data/2010/runningbacks.csv");
+			RunningBackFileReader rfr = new RunningBackFileReader("/data/2011/runningbacks.csv");
 			rfr.processFile();
 			
 			System.out.println(rfr.getPlayers());
