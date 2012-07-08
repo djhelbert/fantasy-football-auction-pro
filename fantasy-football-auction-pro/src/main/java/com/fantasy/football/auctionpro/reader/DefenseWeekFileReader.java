@@ -61,7 +61,7 @@ public class DefenseWeekFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			DefenseWeekFileReader dfr = new DefenseWeekFileReader("/data/2010/defenseweek.csv");
+			DefenseWeekFileReader dfr = new DefenseWeekFileReader("/data/2011/defenseweek.csv");
 			dfr.processFile();
 			System.out.println(dfr.getWeeks());
 		} catch (Exception e) {

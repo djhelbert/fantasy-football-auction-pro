@@ -59,7 +59,7 @@ public class ByeWeekFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			ByeWeekFileReader bfr = new ByeWeekFileReader("/data/2010/byeweek.csv");
+			ByeWeekFileReader bfr = new ByeWeekFileReader("/data/2011/byeweek.csv");
 			bfr.processFile();
 			
 			System.out.println(bfr.getByeWeekMap());

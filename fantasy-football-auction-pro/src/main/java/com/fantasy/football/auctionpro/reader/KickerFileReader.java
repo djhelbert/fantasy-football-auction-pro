@@ -21,28 +21,31 @@ public class KickerFileReader extends AbstractFileReader {
 	private static final int RANK = 0;
 	
 	/** Name */
-	private static final int NAME = 1;
+	private static final int FIRSTNAME = 1;
+
+	/** Name */
+	private static final int LASTNAME = 2;
 	
 	/** Team */
-	private static final int TEAM = 2;
+	private static final int TEAM = 3;
 	
 	/** Extra Point */
-	private static final int XP = 19;
+	private static final int XP = 14;
 	
 	/** FG 0-19 */
-	private static final int FG0_19 = 6;
+	private static final int FG0_19 = 5;
 	
 	/** FG 20-29 */
-	private static final int FG20_29 = 8;
+	private static final int FG20_29 = 6;
 	
 	/** FG 30-39 */
-	private static final int FG30_39 = 10;
+	private static final int FG30_39 = 7;
 	
 	/** FG 40-49 */
-	private static final int FG40_49 = 12;
+	private static final int FG40_49 = 8;
 	
 	/** FG 50+ */
-	private static final int FG50PLUS = 14;
+	private static final int FG50PLUS = 9;
 	
 	/** Defenses */
 	private List<Player> players = new ArrayList<Player>();
@@ -65,7 +68,9 @@ public class KickerFileReader extends AbstractFileReader {
 		
 		String[] values = data.split(getDelimiter());
 		
-		Player p = new Player(values[NAME].toUpperCase(),Constants.K,values[TEAM]);
+		String name = values[FIRSTNAME] + " " + values[LASTNAME];
+		
+		Player p = new Player(name.toUpperCase(),Constants.K,values[TEAM]);
 		p.setRank(new Integer(values[RANK]));
 		
 		PlayerData pd = new PlayerData();
@@ -111,7 +116,7 @@ public class KickerFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			KickerFileReader kfr = new KickerFileReader("/data/2010/kickers.csv");
+			KickerFileReader kfr = new KickerFileReader("/data/2011/kickers.csv");
 			kfr.processFile();
 			
 			System.out.println(kfr.getPlayers());
