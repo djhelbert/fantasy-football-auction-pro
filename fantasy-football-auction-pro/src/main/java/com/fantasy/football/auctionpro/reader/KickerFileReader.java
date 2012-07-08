@@ -20,10 +20,10 @@ public class KickerFileReader extends AbstractFileReader {
 	/** Rank */
 	private static final int RANK = 0;
 	
-	/** Name */
+	/** First Name */
 	private static final int FIRSTNAME = 1;
 
-	/** Name */
+	/** Last Name */
 	private static final int LASTNAME = 2;
 	
 	/** Team */
