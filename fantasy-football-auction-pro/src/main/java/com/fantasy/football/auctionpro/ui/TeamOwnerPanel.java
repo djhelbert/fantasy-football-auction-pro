@@ -59,9 +59,12 @@ public class TeamOwnerPanel extends JPanel implements ActionListener, ListSelect
 	/** Remove Button */
 	private static JButton removeButton = new JButton("Remove Player");
 	
-	/** Delete Button */
+	/** Print Button */
 	private static JButton printButton = new JButton("Print Roster");
 
+	/** Print Button */
+	private static JButton printOwnersButton = new JButton("Print Owners");
+	
 	/** Roster Table Model */
 	private static RosterTableModel rosterTableModel = new RosterTableModel();
 
@@ -125,6 +128,7 @@ public class TeamOwnerPanel extends JPanel implements ActionListener, ListSelect
 		deleteButton.setIcon(Util.getImageIcon("minus.png"));
 		removeButton.setIcon(Util.getImageIcon("minus.png"));
 		printButton.setIcon(Util.getImageIcon("print.png"));
+		printOwnersButton.setIcon(Util.getImageIcon("print.png"));
 		
 		initToolBarPanel();
 		initTablePanel();
@@ -171,12 +175,14 @@ public class TeamOwnerPanel extends JPanel implements ActionListener, ListSelect
 		toolBarPanel.setLayout(new FlowLayout(FlowLayout.LEFT,5,2));
 		toolBarPanel.add(addButton);
 		toolBarPanel.add(deleteButton);
+		toolBarPanel.add(printOwnersButton);
 		toolBarPanel.add(printButton);
 		toolBarPanel.add(removeButton);
 		
 		addButton.addActionListener(this);
 		deleteButton.addActionListener(this);
 		printButton.addActionListener(this);
+		printOwnersButton.addActionListener(this);
 		removeButton.addActionListener(this);
 	}
 
@@ -277,11 +283,31 @@ public class TeamOwnerPanel extends JPanel implements ActionListener, ListSelect
 				deleteOwnerAction(row);
 			}
 		}
+		else if(e.getSource() == printOwnersButton) {
+			printOwnerTable();
+		}
 		else {
 			printRosterTable();
 		}
 	}
 
+	/**
+	 * Print Owner Table
+	 */
+	private void printOwnerTable() {
+		Configuration conf = configurationService.getConfiguration();
+		
+		MessageFormat header = new MessageFormat("Team Owners");
+		MessageFormat footer = new MessageFormat(conf.getLeagueName());
+		
+		try {
+			teamTable.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+		} 
+		catch (java.awt.print.PrinterException err) {
+		    err.printStackTrace();
+		}
+	}
+	
 	/**
 	 * printRosterTable
 	 */
