@@ -68,7 +68,7 @@ public class ConfigurationPanel extends JPanel implements ActionListener {
 	/** Position Panel */
 	private static JPanel positionPanel = new JPanel();
 
-	/** Position Panel */
+	/** Bye Week Panel */
 	private static JPanel byeWeekPanel = new JPanel();
 	
 	/** Configuration Panel */
@@ -148,6 +148,7 @@ public class ConfigurationPanel extends JPanel implements ActionListener {
 	 * Init By Week Panel
 	 */
 	private void initByeWeekPanel() {
+		String wk4  = "";
 		String wk5  = "";
 		String wk6  = "";
 		String wk7  = "";
@@ -164,7 +165,10 @@ public class ConfigurationPanel extends JPanel implements ActionListener {
 			for(String key : map.keySet()) {
 				week = map.get(key);
 				
-				if(week == 5) {
+				if(week == 4) {
+					wk4 += key + " ";
+				}
+				else if(week == 5) {
 					wk5 += key + " ";
 				}
 				else if(week == 6) {
@@ -191,7 +195,10 @@ public class ConfigurationPanel extends JPanel implements ActionListener {
 		}
 		
 		byeWeekPanel.setBorder(BorderFactory.createTitledBorder("Bye Weeks"));
-		byeWeekPanel.setLayout(new GridLayout(7,2,2,2));
+		byeWeekPanel.setLayout(new GridLayout(8,2,2,2));
+
+		byeWeekPanel.add(new JLabel("Week 4",JLabel.RIGHT));
+		byeWeekPanel.add(new JLabel(wk4,JLabel.RIGHT));
 		
 		byeWeekPanel.add(new JLabel("Week 5",JLabel.RIGHT));
 		byeWeekPanel.add(new JLabel(wk5,JLabel.RIGHT));
