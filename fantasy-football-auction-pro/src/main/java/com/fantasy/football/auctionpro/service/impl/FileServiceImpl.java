@@ -13,18 +13,14 @@ import com.fantasy.football.auctionpro.reader.RunningBackFileReader;
 import com.fantasy.football.auctionpro.service.FileService;
 
 /**
- * File Service Impl
+ * File Service Implementation
  * 
  * @author Derek
  *
  */
 public class FileServiceImpl implements FileService {
 	
-	/**
-	 * Get All Players from Files
-	 * 
-	 * @throws Exception
-	 */
+	@Override
 	public List<Player> getAllPlayers() throws Exception {
 		List<Player> list = new ArrayList<Player>();
 		
@@ -61,17 +57,4 @@ public class FileServiceImpl implements FileService {
 		return list;
 	}
 
-	/**
-	 * Main
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		FileService serv = new FileServiceImpl();
-		try {
-			System.out.println(serv.getAllPlayers());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }

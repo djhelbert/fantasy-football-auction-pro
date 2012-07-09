@@ -44,14 +44,17 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 		}
 	}
 	
+	@Override
 	public long count() {
 		return configurationDao.count();
 	}
 	
+	@Override
 	public Map<String,Integer> getByeWeekMap() {
 		return byeWeekMap;
 	}
 	
+	@Override
 	public Configuration getConfiguration() {
 		if( configuration == null ) {
 			configuration = configurationDao.getConfiguration();
@@ -64,6 +67,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 		return configuration;
 	}
 
+	@Override
 	public void updateConfiguration(Configuration configuration) {
 		// Update
 		configurationDao.update(configuration);

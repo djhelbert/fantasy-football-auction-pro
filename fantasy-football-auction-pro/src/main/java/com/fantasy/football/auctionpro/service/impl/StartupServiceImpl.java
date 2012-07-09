@@ -30,12 +30,7 @@ public class StartupServiceImpl implements StartupService {
 	/** Configuration DAO */
 	private ConfigurationDao configurationDao = DaoFactory.getConfigurationDao();
 	
-	/**
-	 * Init Players
-	 * 
-	 * @param players
-	 * @param byeWeekMap
-	 */
+	@Override
 	public void initPlayers(List<Player> players, Map<String,Integer> byeWeekMap) {
 		Integer wk = null;
 		
@@ -51,11 +46,7 @@ public class StartupServiceImpl implements StartupService {
 		}
 	}
 
-	/**
-	 * Init Teams
-	 * 
-	 * @param size
-	 */
+	@Override
 	public void initTeams(int size) {
 		Team team = null;
 		
@@ -71,11 +62,7 @@ public class StartupServiceImpl implements StartupService {
 		}
 	}
 
-	/**
-	 * Initialize League Configuration - Only Happens Once
-	 * 
-	 * @return configuration
-	 */
+	@Override
 	public Configuration initConfiguration() {
 		Configuration configuration = new Configuration();
 		configuration.setScoreSystem(new ScoreSystem());
@@ -84,11 +71,7 @@ public class StartupServiceImpl implements StartupService {
 		return configuration;
 	}
 	
-	/**
-	 * Is Started
-	 * 
-	 * @return boolean
-	 */
+	@Override
 	public boolean isStarted() {
 		if( configurationDao.count() > 0 ) {
 			return true;

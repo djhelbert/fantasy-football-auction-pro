@@ -31,11 +31,7 @@ public class VbdServiceImpl implements VbdService {
 	/** Configuration Service*/
 	private ConfigurationService configurationService = ServiceFactory.getConfigurationService();
 	
-	/**
-	 * Update All Player Fantasy Points
-	 * 
-	 * @param configuration
-	 */
+	@Override
 	public void updatePlayerFantasyPoints(Configuration configuration) {
 		ScoreSystem ss = configuration.getScoreSystem();
 		
@@ -74,12 +70,7 @@ public class VbdServiceImpl implements VbdService {
 		}
 	}
 	
-	/**
-	 * Update Player VBD
-	 * 
-	 * @param configuration
-	 * @param position
-	 */
+	@Override
 	public int updatePlayerVbd(Configuration configuration, String position) {
 		int slot = configuration.getMaxTeams();
 		
@@ -126,11 +117,7 @@ public class VbdServiceImpl implements VbdService {
 		return totalPoints;
 	}
 	
-	/**
-	 * Update All Player Vbd
-	 * 
-	 * @param configuration
-	 */
+	@Override
 	public void updateAllPlayerVbd(Configuration configuration) {
 		int grandTotal = updatePlayerVbd(configuration,Constants.QB) + updatePlayerVbd(configuration,Constants.RB) + updatePlayerVbd(configuration,Constants.WR) + updatePlayerVbd(configuration,Constants.TE) + updatePlayerVbd(configuration,Constants.K);
 		
