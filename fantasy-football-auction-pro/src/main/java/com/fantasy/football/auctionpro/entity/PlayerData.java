@@ -646,7 +646,7 @@ public class PlayerData implements Serializable {
 		
 		if( extraPoint > 0 ) {
 			tmp += " XP " + extraPoint;
-			tmp += " FG " + (fieldGoalZeroNineteen + fieldGoalTwentyTwentyNine + fieldGoalTwentyTwentyNine + fieldGoalThirtyThirtyNine + fieldGoalFortyFortyNine + fieldGoalFifty);
+			tmp += " FG " + (fieldGoalZeroNineteen + fieldGoalTwentyTwentyNine + fieldGoalThirtyThirtyNine + fieldGoalFortyFortyNine + fieldGoalFifty);
 		}
 		
 		return tmp;
