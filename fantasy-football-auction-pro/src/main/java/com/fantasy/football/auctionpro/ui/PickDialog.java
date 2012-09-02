@@ -136,7 +136,8 @@ public class PickDialog extends JDialog implements ActionListener {
 		// Init container
 		initPickPanel();
 		pack();
-
+		setSize(600,450);
+		
 		Util.centerComponent(this);
 	}
 	
@@ -192,7 +193,7 @@ public class PickDialog extends JDialog implements ActionListener {
 		playerPanel.add(new JLabel("Player Name"));
 		playerPanel.add(new JLabel(player.getName()));
 
-		playerPanel.add(new JLabel("2010 Player Statistics"));
+		playerPanel.add(new JLabel("Last Season"));
 		playerPanel.add(new JLabel(player.getPlayerData().toString()));
 		
 		playerPanel.add(new JLabel("Bye Week"));
