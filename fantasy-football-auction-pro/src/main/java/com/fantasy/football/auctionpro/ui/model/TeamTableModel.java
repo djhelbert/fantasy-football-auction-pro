@@ -201,8 +201,6 @@ public class TeamTableModel extends AbstractTableModel {
 		}
 		
 		fireTableDataChanged();
-		
-		JOptionPane.showMessageDialog(MainApp.getMainComponent(),"League team has been saved.","Information",JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	/**
