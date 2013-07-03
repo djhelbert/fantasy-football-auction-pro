@@ -3,12 +3,12 @@ package com.fantasy.football.auctionpro.reader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fantasy.football.auctionpro.Constants;
 import com.fantasy.football.auctionpro.entity.DefenseWeek;
 
 /**
  * Defense Week File Reader
  * 
- * @date Sep 6, 2011
  * @author dhelbert
  */
 public class DefenseWeekFileReader extends AbstractFileReader {
@@ -61,7 +61,7 @@ public class DefenseWeekFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			DefenseWeekFileReader dfr = new DefenseWeekFileReader("/data/2011/defenseweek.csv");
+			DefenseWeekFileReader dfr = new DefenseWeekFileReader("/data/" + Constants.YEAR + "/defenseweek.csv");
 			dfr.processFile();
 			System.out.println(dfr.getWeeks());
 		} catch (Exception e) {

@@ -10,7 +10,7 @@ import com.fantasy.football.auctionpro.entity.PlayerData;
 import com.fantasy.football.auctionpro.ui.PlayerUtil;
 
 /**
- * Receiver File Reader
+ * QB File Reader
  * 
  * @author Derek
  *
@@ -110,7 +110,7 @@ public class QuarterBackFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			QuarterBackFileReader rfr = new QuarterBackFileReader("/data/2011/quarterbacks.csv");
+			QuarterBackFileReader rfr = new QuarterBackFileReader("/data/" + Constants.YEAR + "/quarterbacks.csv");
 			rfr.processFile();
 			
 			System.out.println(rfr.getPlayers());
