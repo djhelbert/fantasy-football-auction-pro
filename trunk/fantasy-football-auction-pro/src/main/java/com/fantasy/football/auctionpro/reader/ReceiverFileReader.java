@@ -120,12 +120,12 @@ public class ReceiverFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			ReceiverFileReader rfr = new ReceiverFileReader("/data/2011/receivers.csv",Constants.WR);
+			ReceiverFileReader rfr = new ReceiverFileReader("/data/" + Constants.YEAR + "/receivers.csv",Constants.WR);
 			rfr.processFile();
 			
 			System.out.println(rfr.getPlayers());
 			
-			ReceiverFileReader tefr = new ReceiverFileReader("/data/2011/tightends.csv",Constants.TE);
+			ReceiverFileReader tefr = new ReceiverFileReader("/data/" + Constants.YEAR + "/tightends.csv",Constants.TE);
 			tefr.processFile();
 			
 			System.out.println(tefr.getPlayers());

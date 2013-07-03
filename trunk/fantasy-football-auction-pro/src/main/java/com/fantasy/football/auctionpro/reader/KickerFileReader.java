@@ -116,7 +116,7 @@ public class KickerFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			KickerFileReader kfr = new KickerFileReader("/data/2011/kickers.csv");
+			KickerFileReader kfr = new KickerFileReader("/data/" + Constants.YEAR + "/kickers.csv");
 			kfr.processFile();
 			
 			System.out.println(kfr.getPlayers());

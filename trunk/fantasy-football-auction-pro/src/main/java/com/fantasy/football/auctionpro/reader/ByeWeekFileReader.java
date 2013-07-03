@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fantasy.football.auctionpro.Constants;
+
 /**
  * Kickers File Reader
  * 
@@ -59,7 +61,7 @@ public class ByeWeekFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			ByeWeekFileReader bfr = new ByeWeekFileReader("/data/2011/byeweek.csv");
+			ByeWeekFileReader bfr = new ByeWeekFileReader("/data/" + Constants.YEAR + "/byeweek.csv");
 			bfr.processFile();
 			
 			System.out.println(bfr.getByeWeekMap());

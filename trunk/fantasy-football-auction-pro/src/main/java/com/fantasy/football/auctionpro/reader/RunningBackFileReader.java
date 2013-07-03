@@ -10,7 +10,7 @@ import com.fantasy.football.auctionpro.entity.PlayerData;
 import com.fantasy.football.auctionpro.ui.PlayerUtil;
 
 /**
- * Receiver File Reader
+ * RB File Reader
  * 
  * @author Derek
  *
@@ -106,7 +106,7 @@ public class RunningBackFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			RunningBackFileReader rfr = new RunningBackFileReader("/data/2011/runningbacks.csv");
+			RunningBackFileReader rfr = new RunningBackFileReader("/data/" + Constants.YEAR + "/runningbacks.csv");
 			rfr.processFile();
 			
 			System.out.println(rfr.getPlayers());

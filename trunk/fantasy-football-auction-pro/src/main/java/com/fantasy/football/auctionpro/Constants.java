@@ -31,4 +31,8 @@ public class Constants {
 	
 	/** Bench */
 	public static String BN = "BN";
+	
+	/** Year */
+	public static String YEAR = "2012";
+	
 }

@@ -105,7 +105,7 @@ public class DefenseFileReader extends AbstractFileReader {
 	 */
 	public static void main(String[] args) {
 		try {
-			DefenseFileReader dfr = new DefenseFileReader("/data/2011/defense.csv");
+			DefenseFileReader dfr = new DefenseFileReader("/data/" + Constants.YEAR + "/defense.csv");
 			dfr.processFile();
 			System.out.println(dfr.getPlayers());
 		} catch (Exception e) {

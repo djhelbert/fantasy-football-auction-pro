@@ -2,6 +2,7 @@ package com.fantasy.football.auctionpro.service.impl;
 
 import java.util.Map;
 
+import com.fantasy.football.auctionpro.Constants;
 import com.fantasy.football.auctionpro.DaoFactory;
 import com.fantasy.football.auctionpro.dao.ConfigurationDao;
 import com.fantasy.football.auctionpro.entity.Configuration;
@@ -33,7 +34,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 	public ConfigurationServiceImpl() {
 		ByeWeekFileReader bfr;
 		try {
-			bfr = new ByeWeekFileReader("/data/2011/byeweek.csv");
+			bfr = new ByeWeekFileReader("/data/" + Constants.YEAR + "/byeweek.csv");
 			
 			bfr.processFile();
 			
