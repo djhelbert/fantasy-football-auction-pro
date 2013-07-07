@@ -20,33 +20,33 @@ public class DefenseFileReader extends AbstractFileReader {
 	/** Rank*/
 	public static int RANK = 0;
 	
+	/** Name */
+	public static int NAME = 1;
+	
 	/** Team */
-	public static int TEAM = 1;
+	public static int TEAM = 2;
 	
 	/** PTS */
-	public static int POINTS = 18;
-	
-	/** DEF INT */
-	public static int DEF_INT = 8;
-	
-	/** Fumbles */
-	public static int FR = 17;
-	
-	/** Name */
-	public static int NAME = 2;
+	public static int POINTS = 9;
 	
 	/** Sack */
-	public static int SACK = 14;
+	public static int SACK = 10;
 	
 	/** Safety */
-	public static int SAFETY = 15;
+	public static int SAFETY = 11;
 	
-	/** Blocked */
-	public static int BLOCKED_KICK = 16;
+	/** DEF INT */
+	public static int DEF_INT = 12;
+	
+	/** Fumbles */
+	public static int FR = 13;
 
 	/** DEF TD */
-	public static int DEF_TD = 11;
-		
+	public static int DEF_TD = 14;
+	
+	/** Blocked */
+	public static int BLOCKED_KICK = 15;
+	
 	/** Defenses */
 	private List<Player> players = new ArrayList<Player>();
 	
