@@ -27,7 +27,7 @@ public class ReceiverFileReader extends AbstractFileReader {
 	private static final int LASTNAME = 2;
 	
 	/** Team */
-	private static final int TEAM = 3;
+	private static final int TEAM = 4;
 	
 	/** Position */
 	private String position = null;
@@ -61,12 +61,12 @@ public class ReceiverFileReader extends AbstractFileReader {
 		p.setRank(new Integer(values[RANK]));
 		
 		PlayerData pd = new PlayerData();
-		pd.setReception(new Integer(values[5]));
-		pd.setReceivingYards(new Integer(values[6]));
-		pd.setReceptionTd(new Integer(values[12]));
-		pd.setRushingTd(new Integer(values[17]));
-		pd.setFumbleLost(new Integer(values[19]));
-		pd.setReturnTd(new Integer(values[20]));
+		pd.setRushingTd(new Integer(values[9]));
+		pd.setReception(new Integer(values[11]));
+		pd.setReceivingYards(new Integer(values[12]));
+		pd.setReceptionTd(new Integer(values[13]));
+		pd.setFumbleLost(new Integer(values[14]));
+		pd.setReturnTd(new Integer(values[16]));
 		
 		// Set player data
 		p.setPlayerData(pd);
