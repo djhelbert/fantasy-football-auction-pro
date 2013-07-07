@@ -30,22 +30,22 @@ public class KickerFileReader extends AbstractFileReader {
 	private static final int TEAM = 3;
 	
 	/** Extra Point */
-	private static final int XP = 14;
+	private static final int XP = 20;
 	
 	/** FG 0-19 */
-	private static final int FG0_19 = 5;
+	private static final int FG0_19 = 10;
 	
 	/** FG 20-29 */
-	private static final int FG20_29 = 6;
+	private static final int FG20_29 = 11;
 	
 	/** FG 30-39 */
-	private static final int FG30_39 = 7;
+	private static final int FG30_39 = 12;
 	
 	/** FG 40-49 */
-	private static final int FG40_49 = 8;
+	private static final int FG40_49 = 13;
 	
 	/** FG 50+ */
-	private static final int FG50PLUS = 9;
+	private static final int FG50PLUS = 14;
 	
 	/** Defenses */
 	private List<Player> players = new ArrayList<Player>();
