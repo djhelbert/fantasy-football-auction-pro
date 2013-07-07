@@ -27,22 +27,22 @@ public class QuarterBackFileReader extends AbstractFileReader {
 	private static final int LASTNAME = 2;
 	
 	/** Team */
-	private static final int TEAM = 3;
+	private static final int TEAM = 4;
 	
 	/** Passing Yards */
-	private static final int PASSYDS = 9;
+	private static final int PASSYDS = 6;
 
 	/** Passing TD */
-	private static final int PASSTD = 12;
+	private static final int PASSTD = 7;
 	
 	/** Passing INT */
-	private static final int PASSINT = 13;
+	private static final int PASSINT = 8;
 	
 	/** Rushing Yards */
-	private static final int RUSHYDS = 15;
+	private static final int RUSHYDS = 9;
 
 	/** Rushing TD */
-	private static final int RUSHTD = 18;
+	private static final int RUSHTD = 10;
 	
 	/** Players */
 	private List<Player> players = new ArrayList<Player>();
