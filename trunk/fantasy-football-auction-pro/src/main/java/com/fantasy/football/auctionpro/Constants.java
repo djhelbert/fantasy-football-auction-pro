@@ -1,5 +1,8 @@
 package com.fantasy.football.auctionpro;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Constants
  * 
@@ -34,5 +37,8 @@ public class Constants {
 	
 	/** Year */
 	public static String YEAR = "2012";
+	
+	/** Team List */
+	public static List<String> list = Arrays.asList("ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CIN", "CLE", "DEN", "GNB", "HOU", "JAC", "MIA", "MIN", "NOR", "NWE", "NYJ", "NYG", "PIT", "SEA", "SDG", "SFO", "STL", "TAM", "TEN", "WAS");
 	
 }
