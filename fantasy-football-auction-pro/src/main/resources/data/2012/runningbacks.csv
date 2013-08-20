@@ -26,14 +26,14 @@ Rk,First,Last,Pos,Team,Age,PassYds,TD,Int,RushYds,TD,Rec,Yds,TD,FumLost,FantasyP
 25,Vick,Ballard,RB,IND,22,0,0,0,814,2,17,152,1,0,114.6,0,63.08
 26,Montee,Ball,RB,DEN,22,0,0,0,0,0,0,0,0,0,0,0,72.38
 27,Giovani,Bernard,RB,CIN,21,0,0,0,0,0,0,0,0,0,0,0,72.93
-28,Jonathan,Stewart,RB,CAR,26,0,0,0,336,1,17,157,1,0,61.3,0,73.62
+28,Daryl,Richardson,RB,STL,23,0,0,0,475,0,24,163,0,2,61.8,0,99.14
 29,BenJarvus,Green-Ellis,RB,CIN,28,0,0,0,1094,6,22,104,0,2,151.8,0,76.67
 30,Mikel,Leshoure,RB,DET,25,0,0,0,798,9,34,214,0,3,149.2,0,79.91
 31,Le'Veon,Bell,RB,PIT,21,0,0,0,0,0,0,0,0,0,0,0,85.5
 32,Andre,Brown,RB,NYG,26,0,0,0,385,8,12,86,0,0,97.1,0,88.26
 33,Mark,Ingram,RB,NOR,23,0,0,0,602,5,6,29,0,0,93.1,0,88.64
 34,Rashard,Mendenhall,RB,ARI,26,0,0,0,182,0,9,62,1,1,28.4,0,95.36
-35,Daryl,Richardson,RB,STL,23,0,0,0,475,0,24,163,0,2,61.8,0,99.14
+35,Jonathan,Stewart,RB,CAR,26,0,0,0,336,1,17,157,1,0,61.3,0,73.62
 36,Jacquizz,Rodgers,RB,ATL,23,0,0,0,362,1,53,402,1,0,88.4,0,100.41
 37,Shane,Vereen,RB,NWE,24,0,0,0,251,3,8,149,1,1,62,0,104.48
 38,Ryan,Williams,RB,ARI,23,0,0,0,164,0,7,44,0,2,16.8,0,105.77
@@ -67,7 +67,7 @@ Rk,First,Last,Pos,Team,Age,PassYds,TD,Int,RushYds,TD,Rec,Yds,TD,FumLost,FantasyP
 66,Pierre,Thomas,RB,NOR,28,0,0,0,473,1,39,354,1,0,94.7,0,179.75
 67,Mike,Tolbert,FB,CAR,27,0,0,0,183,7,27,268,0,0,87.1,0,183.64
 68,Montario,Hardesty,RB,CLE,26,0,0,0,271,1,2,16,0,0,34.7,0,183.8
-69,Mike,Gillislee,RB,MIA,22,0,0,0,0,0,0,0,0,0,0,0,185.75
+69,Ahmad,Bradshaw,RB,IND,27,0,0,0,1015,6,23,245,0,3,0,0,344.5
 70,Marcel,Reece,FB,OAK,28,0,0,0,271,0,52,496,1,0,82.7,0,186
 71,Denard,Robinson,RB,JAC,22,0,0,0,0,0,0,0,0,0,0,0,187.8
 72,Joique,Bell,RB,DET,26,0,0,0,414,3,52,485,0,2,103.9,0,197.17
@@ -97,4 +97,5 @@ Rk,First,Last,Pos,Team,Age,PassYds,TD,Int,RushYds,TD,Rec,Yds,TD,FumLost,FantasyP
 96,Ray,Graham,RB,HOU,22,0,0,0,0,0,0,0,0,0,0,0,307.33
 97,Rashad,Jennings,RB,OAK,28,0,0,0,283,2,19,130,0,1,53.3,0,321
 98,LaRod,Stephens-Howling,RB,PIT,26,0,0,0,356,4,17,106,0,0,70.2,0,344.5
-99,Mike,James,RB,TB,0,0,0,0,0,0,0,0,0,0,0,344.5,
+99,Mike,James,RB,TB,24,0,0,0,0,0,0,0,0,0,0,0,344.5
+100,Mike,Gillislee,RB,MIA,22,0,0,0,0,0,0,0,0,0,0,0,185.75
