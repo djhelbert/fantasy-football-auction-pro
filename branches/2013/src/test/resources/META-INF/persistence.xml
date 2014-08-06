@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence  
+                  http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="persistenceUnit">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.fantasy.football.auctionpro.entity.Team</class>
+		<class>com.fantasy.football.auctionpro.entity.Player</class>
+		<class>com.fantasy.football.auctionpro.entity.PlayerData</class>
+		<class>com.fantasy.football.auctionpro.entity.DefenseWeek</class>
+		<class>com.fantasy.football.auctionpro.entity.Configuration</class>
+		<class>com.fantasy.football.auctionpro.entity.ScoreSystem</class>
+		<properties>
+			<property name="hibernate.archive.autodetection" value="class" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<property name="shared-cache-mode" value="NONE"/>
+			<property name="hibernate.connection.url" value="jdbc:derby:.football2013UnitTest;create=true" />
+			<property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
+			<property name="hibernate.connection.username" value="app" />
+			<property name="hibernate.connection.password" value="app" />
+		</properties>
+	</persistence-unit>
+</persistence>  
