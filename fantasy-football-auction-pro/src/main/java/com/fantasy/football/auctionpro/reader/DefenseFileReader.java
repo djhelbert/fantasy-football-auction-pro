@@ -27,25 +27,25 @@ public class DefenseFileReader extends AbstractFileReader {
 	public static int TEAM = 2;
 	
 	/** PTS */
-	public static int POINTS = 9;
+	public static int POINTS = 8;
 	
 	/** Sack */
-	public static int SACK = 10;
+	public static int SACK = 9;
 	
 	/** Safety */
-	public static int SAFETY = 11;
+	public static int SAFETY = 10;
 	
 	/** DEF INT */
-	public static int DEF_INT = 12;
+	public static int DEF_INT = 11;
 	
 	/** Fumbles */
-	public static int FR = 13;
+	public static int FR = 12;
 
 	/** DEF TD */
-	public static int DEF_TD = 14;
+	public static int DEF_TD = 13;
 	
 	/** Blocked */
-	public static int BLOCKED_KICK = 15;
+	public static int BLOCKED_KICK = 14;
 	
 	/** Defenses */
 	private List<Player> players = new ArrayList<Player>();
