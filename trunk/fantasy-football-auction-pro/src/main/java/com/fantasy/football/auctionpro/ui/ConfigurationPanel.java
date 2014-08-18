@@ -310,7 +310,7 @@ public class ConfigurationPanel extends JPanel implements ActionListener {
 		leaguePanel.add(new JLabel("Default Team Auction Budget",JLabel.RIGHT));
 		leaguePanel.add(defBudgetField);
 		
-		draftDateField.setToolTipText("Sep 1 2013 11:30 AM");
+		draftDateField.setToolTipText("Sep 1 2014 11:30 AM");
 		
 		leaguePanel.add(new JLabel("Auction Draft Date",JLabel.RIGHT));
 		leaguePanel.add(draftDateField);
