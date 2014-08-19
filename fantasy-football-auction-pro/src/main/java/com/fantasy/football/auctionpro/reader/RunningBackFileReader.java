@@ -27,25 +27,25 @@ public class RunningBackFileReader extends AbstractFileReader {
 	private static final int LASTNAME = 2;
 	
 	/** Team */
-	public static final int TEAM = 4;
+	public static final int TEAM = 3;
 	
 	/** Rush Yards */
-	public static final int RUSHYD = 9;
+	public static final int RUSHYD = 6;
 	
 	/** Rush TD */
-	public static final int RUSHTD = 10;
+	public static final int RUSHTD = 9;
 	
 	/** Receptions */
-	public static final int REC = 11;
+	public static final int REC = 10;
 	
 	/** REC YDS */
 	public static final int RECYDS = 12;
 	
 	/** REC TD */
-	public static final int RECTD = 13;
+	public static final int RECTD = 18;
 	
 	/** Fumbles */
-	public static final int FL = 14;
+	public static final int FL = 20;
 	
 	/** Players */
 	private List<Player> players = new ArrayList<Player>();
