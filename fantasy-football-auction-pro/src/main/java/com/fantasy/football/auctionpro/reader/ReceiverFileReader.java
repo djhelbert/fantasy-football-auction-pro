@@ -27,7 +27,7 @@ public class ReceiverFileReader extends AbstractFileReader {
 	private static final int LASTNAME = 2;
 	
 	/** Team */
-	private static final int TEAM = 4;
+	private static final int TEAM = 3;
 	
 	/** Position */
 	private String position = null;
