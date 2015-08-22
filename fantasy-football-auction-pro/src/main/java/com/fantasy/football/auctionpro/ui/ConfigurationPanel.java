@@ -42,10 +42,10 @@ public class ConfigurationPanel extends JPanel implements ActionListener {
 	private static JTextField urlField = new JTextField(80);
 	
 	/** Max Teams Box */
-	private static JComboBox maxTeamsComboBox = new JComboBox(new Integer[] {8,9,10,11,12});
+	private static JComboBox<Integer> maxTeamsComboBox = new JComboBox<Integer>(new Integer[] {8,9,10,11,12});
 	
 	/** Max Roster Size Box */
-	private static JComboBox maxRosterSizeComboBox = new JComboBox(new Integer[] {7,8,9,10,11,12,13,14,15,16});
+	private static JComboBox<Integer> maxRosterSizeComboBox = new JComboBox<Integer>(new Integer[] {7,8,9,10,11,12,13,14,15,16});
 	
 	/** Max Budget Field Box */
 	private static JFormattedTextField maxBudgetField = new JFormattedTextField(new Integer(0));
@@ -81,25 +81,25 @@ public class ConfigurationPanel extends JPanel implements ActionListener {
 	private static ScoreSystemPanel scoreSystemPanel = new ScoreSystemPanel();
 	
 	/** Start QB Box */
-	private static JComboBox startQbComboBox = new JComboBox(new Integer[] {1,2});
+	private static JComboBox<Integer> startQbComboBox = new JComboBox<Integer>(new Integer[] {1,2});
 
 	/** Start RB Box */
-	private static JComboBox startRbComboBox = new JComboBox(new Integer[] {1,2,3,4});
+	private static JComboBox<Integer> startRbComboBox = new JComboBox<Integer>(new Integer[] {1,2,3,4});
 	
 	/** Start TE Box */
-	private static JComboBox startTeComboBox = new JComboBox(new Integer[] {0,1,2});
+	private static JComboBox<Integer> startTeComboBox = new JComboBox<Integer>(new Integer[] {0,1,2});
 	
 	/** Start WR Box */
-	private static JComboBox startRbWrComboBox = new JComboBox(new Integer[] {0,1,2});
+	private static JComboBox<Integer> startRbWrComboBox = new JComboBox<Integer>(new Integer[] {0,1,2});
 	
 	/** Start WR Box */
-	private static JComboBox startWrComboBox = new JComboBox(new Integer[] {0,1,2,3,4,5});
+	private static JComboBox<Integer> startWrComboBox = new JComboBox<Integer>(new Integer[] {0,1,2,3,4,5});
 	
 	/** Start K Box */
-	private static JComboBox startKComboBox = new JComboBox(new Integer[] {0,1,2});
+	private static JComboBox<Integer> startKComboBox = new JComboBox<Integer>(new Integer[] {0,1,2});
 	
 	/** Start DEF Box */
-	private static JComboBox startDefComboBox = new JComboBox(new Integer[] {0,1,2});
+	private static JComboBox<Integer> startDefComboBox = new JComboBox<Integer>(new Integer[] {0,1,2});
 	
 	/** Draft Date */
 	private static JFormattedTextField draftDateField = new JFormattedTextField(new SimpleDateFormat("MMM d yyyy H:mm aa"));

@@ -53,7 +53,7 @@ public class AddPlayerDialog extends JDialog implements ActionListener {
 	private JPanel addPlayerPanel = new JPanel();
 	
 	/** Position Box */
-	private JComboBox positionBox = new JComboBox(new String[] {Constants.QB,Constants.RB,Constants.WR,Constants.TE,Constants.K});
+	private JComboBox<String> positionBox = new JComboBox<String>(new String[] {Constants.QB,Constants.RB,Constants.WR,Constants.TE,Constants.K});
 	
 	/** Name Field */
 	private JTextField nameField = new JTextField(30);
@@ -68,7 +68,7 @@ public class AddPlayerDialog extends JDialog implements ActionListener {
 	private ConfigurationService configurationService = ServiceFactory.getConfigurationService();
 	
 	/** Team Box */
-	private JComboBox teamBox;
+	private JComboBox<String> teamBox;
 	
 	/**
 	 * Add Player Dialog
@@ -92,7 +92,7 @@ public class AddPlayerDialog extends JDialog implements ActionListener {
 				teams.add(team);
 			}
 			
-			teamBox = new JComboBox(teams.toArray());
+			teamBox = new JComboBox<String>(teams.toArray(new String[0]));
 		} 
 		catch (Exception e) {
 			e.printStackTrace();

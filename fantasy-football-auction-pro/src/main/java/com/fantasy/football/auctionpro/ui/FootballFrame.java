@@ -265,22 +265,6 @@ public class FootballFrame extends JFrame implements ActionListener {
 		AddPlayerDialog ad = new AddPlayerDialog();
 		ad.setVisible(true);
 	}
-
-	/**
-	 * Pick Action
-	 */
-	private void pickAction() {
-		List<Player> results = playerDao.getPlayersByName("%" + searchField.getText().toUpperCase() + "%");
-		
-		if( results != null && results.size() > 0 ) {
-			tabbedPane.setSelectedIndex(0);
-			
-			TeamPanel.getPlayerPanel().selectPlayer(results.get(0),true);
-		}
-		else {
-			JOptionPane.showMessageDialog(MainApp.getMainComponent(),"No player with matching name found.","Information",JOptionPane.INFORMATION_MESSAGE);
-		}
-	}
 	
 	/**
 	 * Search Action

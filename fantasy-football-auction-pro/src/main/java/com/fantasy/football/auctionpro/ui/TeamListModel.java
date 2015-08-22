@@ -12,7 +12,7 @@ import com.fantasy.football.auctionpro.entity.Player;
  * @author dhelbert
  *
  */
-public class TeamListModel extends DefaultListModel {
+public class TeamListModel extends DefaultListModel<Player> {
 
 	/** Serial Version UID */
 	private static final long serialVersionUID = -6069810961951710014L;

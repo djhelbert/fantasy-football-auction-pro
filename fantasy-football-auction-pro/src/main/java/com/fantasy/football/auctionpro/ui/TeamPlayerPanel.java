@@ -41,7 +41,7 @@ public class TeamPlayerPanel extends JPanel implements MouseListener, ActionList
 	private static final long serialVersionUID = -977823806057818126L;
 
 	/** Player List */
-	private JList playerList;
+	private JList<Player> playerList;
 	
 	/** Team List Model */
 	private TeamListModel teamListModel = new TeamListModel();
@@ -86,7 +86,7 @@ public class TeamPlayerPanel extends JPanel implements MouseListener, ActionList
 	 * 
 	 */
 	public TeamPlayerPanel() {
-		playerList = new JList(teamListModel);
+		playerList = new JList<Player>(teamListModel);
 		playerList.setCellRenderer(new CustomCellRenderer());
 		playerList.setVisibleRowCount(18);
 		playerList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

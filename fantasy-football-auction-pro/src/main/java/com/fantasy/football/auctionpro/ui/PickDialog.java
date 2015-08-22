@@ -67,10 +67,10 @@ public class PickDialog extends JDialog implements ActionListener {
 	private JButton cancelButton = new JButton("CANCEL");
 	
 	/** Amount Box */
-	private JComboBox amountBox = new JComboBox();
+	private JComboBox<Integer> amountBox = new JComboBox<Integer>();
 
 	/** Team Box */
-	private JComboBox teamBox = new JComboBox();
+	private JComboBox<Team> teamBox = new JComboBox<Team>();
 	
 	/** Player DAO */
 	private PlayerDao playerDao = DaoFactory.getPlayerDao();
@@ -180,12 +180,12 @@ public class PickDialog extends JDialog implements ActionListener {
 			values[i-1] = i;
 		}
 		
-		amountBox = new JComboBox(values);
+		amountBox = new JComboBox<Integer>(values);
 		amountBox.addActionListener(this);
 		
-		Object[] teams = teamService.getAllTeams().toArray();
+		Team[] teams = teamService.getAllTeams().toArray(new Team[0]);
 		
-		teamBox = new JComboBox(teams);
+		teamBox = new JComboBox<Team>(teams);
 		
 		playerPanel.setBorder(BorderFactory.createTitledBorder(getLabelString(player.getPosition())));
 		playerPanel.setLayout(new GridLayout(8,2,2,2));
