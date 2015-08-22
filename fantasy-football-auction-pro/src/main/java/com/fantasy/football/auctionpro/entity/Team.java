@@ -26,7 +26,7 @@ import javax.persistence.OrderBy;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = "Team.findAll", query = "SELECT t FROM Team t"),
-	@NamedQuery(name = "Team.findFavorite", query = "SELECT t FROM Team t where favorite = true"),
+	@NamedQuery(name = "Team.findFavorite", query = "SELECT t FROM Team t where t.favorite = true"),
 	@NamedQuery(name = "Team.count", query = "SELECT COUNT(t) FROM Team t")
 })
 public class Team implements Serializable {

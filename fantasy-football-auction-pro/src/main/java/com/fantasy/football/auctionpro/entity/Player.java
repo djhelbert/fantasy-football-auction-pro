@@ -24,10 +24,10 @@ import javax.persistence.OneToOne;
 @Entity
 @NamedQueries( {
 		@NamedQuery(name = "Player.findAll",          query = "SELECT p FROM Player p"),
-		@NamedQuery(name = "Player.findByTeam",       query = "SELECT p FROM Player p where team = :team order by p.pickNumber"),
-		@NamedQuery(name = "Player.findByPosition",   query = "SELECT p FROM Player p where position = :position and team is null order by p.rank"),
-		@NamedQuery(name = "Player.findAllByPosition",query = "SELECT p FROM Player p where position = :position order by playerData.fantasyPoints desc"),
-		@NamedQuery(name = "Player.findByName",       query = "SELECT p FROM Player p where name like :name and team is null order by p.rank"),
+		@NamedQuery(name = "Player.findByTeam",       query = "SELECT p FROM Player p where p.team = :team order by p.pickNumber"),
+		@NamedQuery(name = "Player.findByPosition",   query = "SELECT p FROM Player p where p.position = :position and p.team is null order by p.rank"),
+		@NamedQuery(name = "Player.findAllByPosition",query = "SELECT p FROM Player p where p.position = :position order by p.playerData.fantasyPoints desc"),
+		@NamedQuery(name = "Player.findByName",       query = "SELECT p FROM Player p where p.name like :name and p.team is null order by p.rank"),
 		@NamedQuery(name = "Player.count",            query = "SELECT COUNT(p) FROM Player p")
 } )
 public class Player implements Serializable {
