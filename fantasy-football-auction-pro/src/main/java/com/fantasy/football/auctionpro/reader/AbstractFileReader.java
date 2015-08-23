@@ -89,6 +89,8 @@ public abstract class AbstractFileReader {
 	public abstract void processLine(String data, int row) throws Exception;
 
 	/**
+	 * Get Score System
+	 * 
 	 * @return the scoreSystem
 	 */
 	public ScoreSystem getScoreSystem() {
@@ -96,6 +98,8 @@ public abstract class AbstractFileReader {
 	}
 
 	/**
+	 * Set Score System
+	 * 
 	 * @param scoreSystem the scoreSystem to set
 	 */
 	public void setScoreSystem(ScoreSystem scoreSystem) {
