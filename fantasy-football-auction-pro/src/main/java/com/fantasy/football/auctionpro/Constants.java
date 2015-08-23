@@ -36,7 +36,7 @@ public class Constants {
 	public static String BN = "BN";
 	
 	/** Year */
-	public static String YEAR = "2013";
+	public static String YEAR = "2014";
 	
 	/** Team List */
 	public static List<String> list = Arrays.asList("ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CIN", "CLE", "DEN", "GNB", "HOU", "JAC", "MIA", "MIN", "NOR", "NWE", "NYJ", "NYG", "PIT", "SEA", "SDG", "SFO", "STL", "TAM", "TEN", "WAS");
