@@ -29,9 +29,6 @@ public class KickerFileReader extends AbstractFileReader {
 	/** Team */
 	private static final int TEAM = 3;
 	
-	/** Extra Point */
-	private static final int XP = 14;
-	
 	/** FG 0-19 */
 	private static final int FG0_19 = 5;
 	
@@ -46,6 +43,9 @@ public class KickerFileReader extends AbstractFileReader {
 	
 	/** FG 50+ */
 	private static final int FG50PLUS = 9;
+	
+	/** Extra Point */
+	private static final int XP = 14;
 	
 	/** Defenses */
 	private List<Player> players = new ArrayList<Player>();
@@ -75,11 +75,11 @@ public class KickerFileReader extends AbstractFileReader {
 		
 		PlayerData pd = new PlayerData();
 		
-		pd.setFieldGoalZeroNineteen(new Integer(values[FG0_19]));
-		pd.setFieldGoalTwentyTwentyNine(new Integer(values[FG20_29]));
-		pd.setFieldGoalThirtyThirtyNine(new Integer(values[FG30_39]));
-		pd.setFieldGoalFortyFortyNine(new Integer(values[FG40_49]));
-		pd.setFieldGoalFifty(new Integer(values[FG50PLUS]));
+		pd.setFieldGoalZeroNineteen(new Integer(splitValues(values[FG0_19])));
+		pd.setFieldGoalTwentyTwentyNine(new Integer(splitValues(values[FG20_29])));
+		pd.setFieldGoalThirtyThirtyNine(new Integer(splitValues(values[FG30_39])));
+		pd.setFieldGoalFortyFortyNine(new Integer(splitValues(values[FG40_49])));
+		pd.setFieldGoalFifty(new Integer(splitValues(values[FG50PLUS])));
 		pd.setExtraPoint(new Integer(values[XP]));
 		
 		// Set player data
@@ -91,6 +91,18 @@ public class KickerFileReader extends AbstractFileReader {
 		players.add(p);
 	}
 
+	/**
+	 * Split Values
+	 * 
+	 * @param value
+	 * 
+	 * @return String
+	 */
+	private String splitValues(String value) {
+		int index = value.indexOf('-');
+		return value.substring(0, index);
+	}
+	
 	/**
 	 * Get Players
 	 * 
